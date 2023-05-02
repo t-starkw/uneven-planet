@@ -1,18 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider, createTheme } from '@rneui/themed';
-import { Button } from '@rneui/base';
+import MainContainer from './navigation/MainContainer';
 
 export default function App() {
   return (
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>
-        <View style={styles.container}>
-          <Text style={{ color: theme.colors.black}}>My App</Text>
-          <Button title="Hello" />
-          <StatusBar style="auto" />
-        </View>
+        <MainContainer />
       </ThemeProvider>
     </SafeAreaProvider>
   );
@@ -21,19 +15,14 @@ export default function App() {
 const theme = createTheme({
   colors: {
     primary: '#E6DFF1',
+    primaryDark: '#5A3D8A',
     secondary: '#C1DEDC',
+    secondaryDark: '#72B5B0',
+    tertiary: '#F1EEE7',
+    tertiaryDark: '#D9D1BE',
     white: '#FDFCFC',
     black: '#030000',
-    greyOutline: '#F1EEE7'
   },
 
 });
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: theme.colors.white,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
